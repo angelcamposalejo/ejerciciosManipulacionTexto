@@ -11,24 +11,11 @@ void ManipulacionTexto::Window_Open(Win::Event& e)
 
 }
 
-void ManipulacionTexto::btAgregar_Click(Win::Event& e)
-{
-	nameList.push_back(tbxEntrada.Text);
-	tbxLista.Text += tbxEntrada.Text;
-	tbxLista.Text += L"\r\n";
-	tbxEntrada.Text = L"";
-	tbxEntrada.SetFocus();
-}
 
-void ManipulacionTexto::btOrdenar_Click(Win::Event& e)
+
+void ManipulacionTexto::btCalcular_Click(Win::Event& e)
 {
-	nameList.sort();
-	tbxSalida.Text = L"";
-	const list<wstring>::iterator listEnd = nameList.end();
-	for (list<wstring>::iterator names = nameList.begin(); names != listEnd; names++)
-	{
-		tbxSalida.Text += *names;
-		tbxSalida.Text += L"\r\n";
-	}
+	this->tbxString.IntValue = tbxEntrada.Text.length();
+	this->tbxChar.IntValue = wcslen(tbxEntrada.Text.c_str());
 }
 
