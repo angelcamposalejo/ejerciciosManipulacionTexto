@@ -15,7 +15,16 @@ void ManipulacionTexto::Window_Open(Win::Event& e)
 
 void ManipulacionTexto::btCalcular_Click(Win::Event& e)
 {
-	this->tbxString.IntValue = tbxEntrada.Text.length();
-	this->tbxChar.IntValue = wcslen(tbxEntrada.Text.c_str());
+	wstring entrada = tbxEntrada.Text;
+	const int len = entrada.length();
+	int contador = 0;
+	for (int i = 0; i < len; i++)
+	{
+		if (entrada[i] == 'a')
+		{
+			contador++;
+		}
+	}
+	tbxString.IntValue = contador;
 }
 

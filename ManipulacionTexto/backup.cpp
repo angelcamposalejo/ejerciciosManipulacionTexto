@@ -11,14 +11,20 @@ void ManipulacionTexto::Window_Open(Win::Event& e)
 
 }
 
-void ManipulacionTexto::btAgregar_Click(Win::Event& e)
-{
-	
-}
-
 
 
 void ManipulacionTexto::btCalcular_Click(Win::Event& e)
 {
+	wstring entrada = tbxEntrada.Text;
+	const int len = entrada.length();
+	int contador = 0;
+	for (int i = 0; i < len; i++)
+	{
+		if (entrada[i] == 'a')
+		{
+			contador++;
+		}
+	}
+	tbxString.IntValue = contador;
 }
 
